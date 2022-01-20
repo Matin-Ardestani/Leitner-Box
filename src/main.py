@@ -2,7 +2,7 @@ import sqlite3
 from pathlib import Path
 
 # connect to database
-connection = sqlite3.connect('%s/words.db' % str(Path.cwd()))
+connection = sqlite3.connect('%s/src/words.db' % str(Path.cwd()))
 cursor = connection.cursor()
 
 # -Tables-
@@ -76,6 +76,3 @@ for item in words_list:
             cursor.execute(quary) # delete from former box
 
             connection.commit()
-
-connection.close()
-cursor.close()
